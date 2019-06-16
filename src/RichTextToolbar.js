@@ -101,8 +101,7 @@ export default class RichTextToolbar extends Component {
 
     _defaultRenderAction(action, selected) {
         const icon = this._getButtonIcon(action);
-        return ( <
-            TouchableOpacity key = { action }
+        return ( < TouchableOpacity key = { action }
             style = {
                 [
                     { height: 50, width: 50, justifyContent: 'center' },
@@ -116,8 +115,7 @@ export default class RichTextToolbar extends Component {
                 style = {
                     { tintColor: selected ? this.props.selectedIconTint : this.props.iconTint }
                 }
-                /> : null} < /
-                TouchableOpacity >
+                /> : null} </TouchableOpacity >
             );
         }
 
@@ -128,8 +126,7 @@ export default class RichTextToolbar extends Component {
         }
 
         render() {
-            return ( <
-                View style = {
+            return ( < View style = {
                     [{ height: 50, backgroundColor: '#D3D3D3', alignItems: 'center' }, this.props.style]
                 } >
                 <
@@ -140,8 +137,7 @@ export default class RichTextToolbar extends Component {
                 renderRow = {
                     (row) => this._renderAction(row.action, row.selected)
                 }
-                /> < /
-                View >
+                /> </View >
             );
         }
 
