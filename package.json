@@ -9,7 +9,8 @@
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "react-native-webview-bridge-updated": "^1.0.0"
+    "react-native-webview-bridge-updated": "^1.0.0",
+    "react-native-zss-rich-text-editor": "https://github.com/dsp05/react-native-zss-rich-text-editor.git#5ee9b4b3b3c50989227148625c4462269048ce89"
   },
   "peerDependencies": {
     "react": "*",
