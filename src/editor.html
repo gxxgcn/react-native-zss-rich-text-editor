@@ -917,7 +917,7 @@
 				whenPastingInsertAsPlainText('zss_editor_title');
 				whenPastingInsertAsPlainText('zss_editor_content');
 
-				zss_editor.focusTitle();
+				// zss_editor.focusTitle();
 
 				setTimeout(function() {
 					WebViewBridge.send(JSON.stringify({type: 'ZSS_INITIALIZED'}))
@@ -1710,6 +1710,7 @@
 			}
 
 			#zss_editor_title {
+				display: none;
 				padding-left: 10px;
 				padding-right: 10px;
 			}
@@ -1731,6 +1732,7 @@
 			}
 
 			#separatorContainer {
+				display: none;
 				-webkit-user-select: none;
 				padding-left: 10px;
 				padding-right: 10px;
