@@ -70,7 +70,6 @@ export default class RichTextEditor extends Component {
   }
 
   _onKeyboardWillShow(event) {
-    console.log('!!!!', event);
     const newKeyboardHeight = event.endCoordinates.height;
     if (this.state.keyboardHeight === newKeyboardHeight) {
       return;
@@ -90,8 +89,9 @@ export default class RichTextEditor extends Component {
     const {marginTop = 0, marginBottom = 0} = this.props.style;
     const spacing = marginTop + marginBottom + top + bottom;
 
-    const editorAvailableHeight = Dimensions.get('window').height - 2 * keyboardHeight - 80 - spacing;
-    this.setEditorHeight(editorAvailableHeight);
+    const editorAvailableHeight = Dimensions.get('window').height - keyboardHeight - spacing;
+    // Do not update editor height here, editor height should be calculated based on parent's height
+    // this.setEditorHeight(editorAvailableHeight);
   }
 
   onBridgeMessage(str){
@@ -293,7 +293,14 @@ export default class RichTextEditor extends Component {
     //in release build, external html files in Android can't be required, so they must be placed in the assets folder and accessed via uri
     const pageSource = PlatformIOS ? require('./editor.html') : { uri: 'file:///android_asset/editor.html' };
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1}} onLayout={ (event) => {
+        console.log(event.nativeEvent.layout);
+        const {top = 0, bottom = 0} = this.props.contentInset;
+        const {marginTop = 0, marginBottom = 0} = this.props.style;
+        const spacing = marginTop + marginBottom + top + bottom;
+        const editorAvailableHeight = event.nativeEvent.layout.height - spacing;
+        this.setEditorHeight(editorAvailableHeight);
+      }}>
         <WebViewBridge
           {...this.props}
           hideKeyboardAccessoryView={true}

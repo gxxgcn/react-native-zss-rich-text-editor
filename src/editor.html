@@ -885,8 +885,9 @@
 				clearHtmlIfTextIsEmpty('zss_editor_content');
 
 				$(document).on('selectionchange',function(e){
-					console.log('selectionchange');
-					zss_editor.calculateEditorHeightWithCaretPosition();
+					if (!zss_editor.isDragging) {
+						zss_editor.calculateEditorHeightWithCaretPosition();
+					};
 					zss_editor.setScrollPosition();
 					zss_editor.enabledEditingItems(e);
 					notifyIfSelectedTextHasChanged();
