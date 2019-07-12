@@ -294,7 +294,6 @@ export default class RichTextEditor extends Component {
     const pageSource = PlatformIOS ? require('./editor.html') : { uri: 'file:///android_asset/editor.html' };
     return (
       <View style={{flex: 1}} onLayout={ (event) => {
-        console.log(event.nativeEvent.layout);
         const {top = 0, bottom = 0} = this.props.contentInset;
         const {marginTop = 0, marginBottom = 0} = this.props.style;
         const spacing = marginTop + marginBottom + top + bottom;
