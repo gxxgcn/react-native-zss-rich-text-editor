@@ -297,7 +297,7 @@ export default class RichTextEditor extends Component {
         const {top = 0, bottom = 0} = this.props.contentInset;
         const {marginTop = 0, marginBottom = 0} = this.props.style;
         const spacing = marginTop + marginBottom + top + bottom;
-        const editorAvailableHeight = event.nativeEvent.layout.height - spacing;
+        const editorAvailableHeight = event.nativeEvent.layout.height - spacing - 80;
         this.setEditorHeight(editorAvailableHeight);
       }}>
         <WebViewBridge
