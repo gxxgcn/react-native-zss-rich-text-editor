@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {ListView, View, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import { View, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import {actions} from './const';
+import ListView from 'deprecated-react-native-listview';
 
 const defaultActions = [
   actions.insertImage,
