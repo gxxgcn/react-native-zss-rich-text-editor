@@ -9,7 +9,7 @@
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "react-native-webview-bridge-updated": "https://github.com/gxxgcn/react-native-webview-bridge.git#9465565744f93038955fae84e3494b0e2e33dee3"
+    "react-native-webview-bridge-updated": "https://github.com/gxxgcn/react-native-webview-bridge.git#757064ff0100ef996cc119971bbca5b2fba2f802"
   },
   "peerDependencies": {
     "react": "*",
