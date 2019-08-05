@@ -9,7 +9,6 @@
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "deprecated-react-native-listview": "^0.0.5",
     "react-native-webview-bridge-updated": "https://github.com/gxxgcn/react-native-webview-bridge.git#757064ff0100ef996cc119971bbca5b2fba2f802"
   },
   "peerDependencies": {
